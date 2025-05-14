@@ -1,0 +1,314 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+.MsoChpDefault
+	{font-size:12.0pt;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:20.0pt;line-height:115%'>LangGraph.js Server Agents</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>Video Link: <a
+href="https://youtu.be/MWhVpp1roKk" target="_blank">https://youtu.be/MWhVpp1roKk</a></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>GitHub Repository:
+ <a href="https://github.com/Ashot72/Ashot72-LangGrap.js-Server-Agents"
+target="_blank">https://github.com/Ashot72/Ashot72-LangGrap.js-Server-Agents</a></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><a href="https://langchain-ai.github.io/langgraphjs/"
+target="_blank"><span style='font-size:14.0pt;line-height:115%'>LangGraph.js</span></a><span
+style='font-size:14.0pt;line-height:115%'>&nbsp;is a library for building
+stateful, multi-actor applications with LLMs, used to create agent and
+multi-agent workflows. Compared to other</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>LLM
+frameworks, it offers these core benefits; cycles, controllability, and
+persistence.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>The <a
+href="https://langchain-ai.github.io/langgraphjs/concepts/langgraph_server/"
+target="_blank">LangGraph Server</a> is a component of the LangGraph platform,
+designed to facilitate the development and deployment of applications built
+with </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>LangChain's
+LangGraph framework. It serves as an API server that integrates various tools
+and technologies to support the execution and management </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>of LangGraph
+applications.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><i><span style='font-size:14.0pt;line-height:115%'>LangGraph.js
+Server Agents</span></i><span style='font-size:14.0pt;line-height:115%'> the we
+built are specialized agents built and run within the <i>LangGraph Server</i>
+environment. These agents are defined using the <i>LangGraph framework</i>, an </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>extension of
+LangChain designed for creating <i>stateful, multi-step workflows</i> (like
+conversational agents, tool-using assistants). </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>We defined
+three agents: <i>Chat, Search Job Notification</i>, and <i>Supervisor Agent</i>,
+which determines which agent to use and routes the user prompt accordingly.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1391 height=677 id="Picture 3"
+src="doc_files/image001.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>Figure 1</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>The Chat
+Agent is used for answering simple questions, such as <i>Generate 5-letter
+English words.</i> Note: You can edit the question to receive a new answer (fork
+it).</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1399 height=692 id="Picture 4"
+src="doc_files/image002.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>Figure 2</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>The Search
+Agent searches the web in real time using <i>Tavily Search</i>.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1399 height=726 id="Picture 5"
+src="doc_files/image003.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>Figure 3</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>I developed
+a Job Notification agent in Node.js. You can explore the project on GitHub: <a
+href="https://github.com/Ashot72/Job-Interview-Notification-AI-Agent-LangGraph-JS"
+target="_blank">Job-Interview-Notification-AI-Agent-LangGraph-JS</a>, where
+detailed documentation is available.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1081 height=351 id="Picture 6"
+src="doc_files/image004.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>Figure 4</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>In the app,
+the AI agent will select the matching job categories based on a prompt from the
+Categories.json file. Then, from the respective categories, matching candidates
+in the Candidates.json </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>file will be
+selected based on their skills. The app follows a human-in-the-loop (HITL)
+approach, requiring human intervention before proceeding with certain tasks. If
+the selected best candidate </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>does not
+satisfy the recruiter, they can skip it and ask for the next best candidate. If
+the best candidate is selected, an email notification generated by AI will be
+sent to the candidate. If the </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>generated
+email does not satisfy the recruiter; they can skip it and ask for another one
+with different content.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1397 height=673 id="Picture 7"
+src="doc_files/image005.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>Figure 5</span></p>
+
+<p class=MsoNormal><i><span style='font-size:14.0pt;line-height:115%'>Supervisor
+Agent</span></i><span style='font-size:14.0pt;line-height:115%'> determines
+which agent to use and routes the user prompt accordingly.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1394 height=694 id="Picture 8"
+src="doc_files/image006.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>Figure 6</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>In order to
+use LangGraph Server, we need to register with <a
+href="https://smith.langchain.com/" target="_blank">LangSmith</a> which is a
+comprehensive DevOps platform designed to support the development, debugging,
+testing, evaluation, and monitoring of large </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>language
+model (LLM) applications. Developed by the creators of LangChain, LangSmith
+addresses the challenges of transitioning LLM applications from prototypes to
+reliable, production-ready systems.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1170 height=836 id="Picture 9"
+src="doc_files/image007.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>Figure 7</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>We use
+LangGraph Server for local development which is free.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1208 height=523 id="Picture 10"
+src="doc_files/image008.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>Figure 8</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>For the app,
+we use the following keys and credentials in the <i>.env</i> file:</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>OPENAI_API_KEY
+and TAVILY_API_KEY (which is free) for interacting with APIs.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>EMAIL_USER
+and EMAIL_PASSWORD for sending job notifications via email.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>INTERVIEWER_FULL_NAME,
+INTERVIEW_TIME, and INTERVIEW_LOCATION are included in the email for job
+interview details.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>LANGCHAIN
+block is required to connect to LangSmith to run the LangGraph server.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>The
+LANGCHAIN_API_KEY is free and provided after registration.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1390 height=661 id="Picture 11"
+src="doc_files/image009.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>Figure 9</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>Sending
+emails is tricky when using the NodeMailer package. If you specify your Gmail
+username and password, it will not work. Google has changed its policy
+regarding this feature,</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>rendering it
+ineffective in resolving the problem. Thankfully, there is a solution that
+involves enabling 2-Step Verification and generating an app password.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>Navigate to</span><span
+style='font-size:14.0pt;line-height:115%'> </span><span style='font-size:14.0pt;
+line-height:115%'><a href="https://myaccount.google.com/u/2/security?hl=en">https://myaccount.google.com/u/2/security?hl=en</a>
+enable 2-Step Verification, and create an app password, which I have already
+done. Then, put the app password in the .env file.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1466 height=799 id="Picture 12"
+src="doc_files/image010.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>Figure 9</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>When we
+developed the server agents, we had in mind a web-based application that would
+make requests to the LangGraph Server agents and render the responses. It will
+connect to any agent, </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>including
+the supervisor, and display all the previous threads, similar to ChatGPT, where
+users can revisit and continue the conversation. The app will also allow users
+to edit the prompts and </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>resubmit
+them (fork them), similar to ChatGPT.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>The app
+follows a human-in-the-loop (HITL) approach, requiring human intervention
+before proceeding with certain tasks, as demonstrated in the Job Notification
+Agent, where the </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>agent interrupts
+at two points.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1449 height=832 id="Picture 13"
+src="doc_files/image011.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>Figure 10</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>When a user
+tries to select the best employee, the agent should allow the user to choose
+another one. This is where interrupts are used. Based on the interrupt type such
+as <i>ignore</i>, </span></p>
+
+<p class=MsoNormal><i><span style='font-size:14.0pt;line-height:115%'>response</span></i><span
+style='font-size:14.0pt;line-height:115%'>, <i>accept</i>, or <i>edit </i>the
+user is redirected to the corresponding node.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:115%'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

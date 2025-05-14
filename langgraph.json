@@ -1,0 +1,13 @@
+{
+    "node_version": "20",
+    "graphs": {
+        "chat": "./src/agent/chat/index.ts:agent",
+        "search_agent": "./src/agent/search/index.ts:agent",
+        "job-notification_agent": "./src/agent/job-notification/index.ts:agent",
+        "supervisor_agent": "./src/agent/supervisor/index.ts:agent"
+    },
+    "env": ".env",
+    "dependencies": [
+        "."
+    ]
+}
