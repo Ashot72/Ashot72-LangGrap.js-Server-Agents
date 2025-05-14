@@ -32,8 +32,7 @@ export async function sendNotification(state: JobNotificationAnnotationState):
             }
         });
     })
-    console.log("bbb0", JSON.stringify(state.bestEmployee, null, 2))
-    console.log("eeeee", JSON.stringify(mailOptions, null, 2))
+
     return {
         emailSent: result
     }

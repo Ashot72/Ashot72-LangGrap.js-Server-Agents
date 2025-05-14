@@ -30,7 +30,6 @@ const graph = new StateGraph(SearchAgentAnnotation)
         }
 
         const results = await tavilySearch.invoke({ query: query as string })
-        console.log("Results", JSON.stringify(results, null, 2))
 
         const firstResult = results.results[0]
         if (!firstResult || !firstResult.content) {
